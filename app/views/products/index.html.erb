@@ -1,12 +1,14 @@
 <div class="container-fluid">
   <div class="row">
-    <% @products.each do |product| %>
-      <div class="col-md-3">
-        <p>Title</p>
-        <%= link_to(product.title, product_path(product)) %><br>
-        <%= product.description %>
-      </div>
-    <% end %>
-
+    <div class="col-md-3">
+      <% @products.each do |product| %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+        <%= @product.title %> ￥ <%= @product.price %>
+      <% end %>
+    </div>
   </div>
 </div>
