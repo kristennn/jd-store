@@ -1,0 +1,23 @@
+<div class="col-md-12">
+  <%= link_to("上架新品", new_admin_product_path, class: "btn btn-primary pull-right") %>
+  <table class="table table-bordered">
+    <thead>
+      <th>商品详情</th>
+      <th>品名</th>
+      <th>编辑</th>
+      <th>下架</th>
+      <th>上架时间</th>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= link_to(product.description, admin_product_path(product))%></td>
+          <td><%= product.title %></td>
+          <td><%= link_to("编辑", edit_admin_product_path(product), class: "btn btn-sm btn-default") %></td>
+          <td><%= link_to("删除", admin_product_path(product), class: "btn btn-sm btn-default", data: {:confirm => "Are you sure?"}, method: :delete ) %></td>
+          <td><%= product.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
