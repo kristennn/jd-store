@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-md-3">
+        <p>Title</p>
+        <%= link_to(product.title, product_path(product)) %>
+        <%= product.description %>
+      </div>
+      <div class="col-md-3">
+        <p>Title</p>
+        <%= link_to(product.title, product_path(product)) %>
+        <%= product.description %>
+      </div>
+      <div class="col-md-3">
+        <p>Title</p>
+        <%= link_to(product.title, product_path(product)) %>
+        <%= product.description %>
+      </div>
+      <div class="col-md-3">Title
+        <%= link_to(product.title, product_path(product)) %>
+        <%= product.description %>
+      </div>
+    <% end %>
+  </div>
+</div>
