@@ -4,6 +4,8 @@
     <thead>
       <th>商品详情</th>
       <th>品名</th>
+      <th>单价</th>
+      <th>库存</th>
       <th>编辑</th>
       <th>下架</th>
       <th>上架时间</th>
@@ -13,6 +15,8 @@
         <tr>
           <td><%= link_to(product.description, admin_product_path(product))%></td>
           <td><%= product.title %></td>
+          <td><%= product.price %></td>
+          <td><%= product.quantity %></td>
           <td><%= link_to("编辑", edit_admin_product_path(product), class: "btn btn-sm btn-default") %></td>
           <td><%= link_to("删除", admin_product_path(product), class: "btn btn-sm btn-default", data: {:confirm => "Are you sure?"}, method: :delete ) %></td>
           <td><%= product.created_at %></td>

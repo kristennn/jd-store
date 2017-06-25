@@ -1,0 +1,8 @@
+<%= simple_form_for [:admin, @product] do |f| %>
+<%= f.input :title, input_html: {class: "form-control"} %>
+<%= f.input :description, input_html: {class: "form-control"} %>
+<%= f.input :price, input_html: {class: "form-control"} %>
+<%= f.input :quantity, input_html: {class: "form-control"} %>
+<br>
+<%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
